@@ -38,12 +38,12 @@ func mapper() {
 	for msg := range req {
 		switch v := msg.(type) {
 		case addWordMsg:
-			words[string(v.word)] += 1
-			cnt, _ := words[string(v.word)]
+			words[v.word] += 1
+			cnt, _ := words[v.word]
 			v.cnt <- cnt
 
 		case cntWordMsg:
-			cnt, _ := words[string(v.word)]
+			cnt, _ := words[v.word]
 			v.cnt <- cnt
 		}
 	}

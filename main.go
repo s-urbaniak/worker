@@ -10,10 +10,10 @@ import (
 func writer(values []string) {
 	i := 0
 	for {
-		mapper.AddWord(values[i])
-
-		i++
 		time.Sleep(50 * time.Millisecond)
+
+		mapper.AddWord(values[i])
+		i++
 		if i == len(values) { // start over
 			i = 0
 		}
